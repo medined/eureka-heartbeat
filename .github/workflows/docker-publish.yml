@@ -14,7 +14,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: medined/eureka-heartbeat
+  IMAGE_NAME: eureka-heartbeat
 
 jobs:
   # Push image to GitHub Packages.
