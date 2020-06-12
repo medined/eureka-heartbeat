@@ -9,10 +9,14 @@ URL returns 200. The container loop endlessly.
 
 This is not a sophisticated container but at only 8.67MB it is quite a bit smaller than a Spring Boot Sidecar container.
 
-## Build Image
+## Docker Hub
+
+* https://hub.docker.com/repository/docker/medined/eureka-heartbeat
+
+## Pull Container
 
 ```bash
-docker build -t medined/eureka-heartbeater .
+docker push medined/eureka-heartbeat:latest
 ```
 
 ## Run Container
@@ -25,7 +29,13 @@ docker run \
   --env EUREKA_URL=http://172.17.0.3:8761 \
   --env SERVICE_NAME=HELLO-SERVICE \
   --env HOST_NAME=hello01 \
-  medined/eureka-heartbeater
+  medined/eureka-heartbeater:latest
+```
+
+## Build Image
+
+```bash
+docker build -t medined/eureka-heartbeater:latest .
 ```
 
 ## Find Container IP Address
